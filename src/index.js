@@ -2,18 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
     const course = 'Half Stack Application Development'
-    const part1 = {
-        name: 'Fundamentals of React',
-        exercises: 10
-    }
-    const part2 = {
-        name: 'Using props to pass data',
-        exercises: 7
-    }
-    const part3 = {
-        name: 'State of a component',
-        exercises: 14
-    }
+    const parts = [
+            {
+            name: 'Fundamentals of React',
+            exercises: 10
+        },
+        {
+            name: 'Using props to pass data',
+            exercises: 7
+        },
+        {
+            name: 'State of a component',
+            exercises: 14
+        }
+    ]
     // const exercises1 = 10
     // const exercises2 = 7
     // const exercises3 = 14
@@ -40,9 +42,9 @@ const Content = (props) => {
     
     return(
         <>
-          <Part part={part1.name} exercises={part1.exercises}/>
-      <Part part={part2.name} exercises={part2.exercises}/>
-      <Part part={part3.name} exercises={part2.exercises}/>
+          <Part part={parts[0].name} exercises={parts[0].exercises}/>
+      <Part part={parts[1].name} exercises={parts[1].exercises}/>
+      <Part part={parts[2].name} exercises={parts[2].exercises}/>
         </>
     )
 }
@@ -57,9 +59,9 @@ const App = () => {
 
     return (
         <>
-            <Header course={course} />
-            <Content />
-            <Total exercises={part1.exercises + part2.exercises + part3.exercises} />
+            <Header course = {course} />
+            <Content parts = {parts}/>
+            <Total exercises = {parts[0].exercises + parts[1].exercises + parts[2].exercises} />
         </>
     )
 }
