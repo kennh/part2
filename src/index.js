@@ -57,7 +57,7 @@ const Total = (props) => {
 }
 
 const App = () => {
-
+    
     return (
         <>
             <Header course= {course.name} />
